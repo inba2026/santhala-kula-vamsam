@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Member Registration | சந்தல குல வம்சம்</title>
+<style>
+:root{--navy:#16324f;--gold:#d6a84f;--bg:#f5f7fa;--ink:#203040}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:Arial,"Noto Sans Tamil",sans-serif;color:var(--ink)}
+header{background:linear-gradient(135deg,#16324f,#295578);color:white;text-align:center;padding:26px 16px}header h1{margin:0 0 8px;font-size:1.55rem}header p{margin:0;line-height:1.6}
+main{max-width:760px;margin:22px auto;padding:0 14px}.card{background:white;border-radius:16px;padding:22px;box-shadow:0 5px 24px #142d4212;border:1px solid #e7ebef}.intro{line-height:1.7;margin-top:0}.notice{background:#fff8e9;border-left:4px solid var(--gold);padding:12px;border-radius:8px;font-size:.92rem;line-height:1.55;margin:15px 0}
+form{display:grid;grid-template-columns:1fr 1fr;gap:15px}.field{display:flex;flex-direction:column;gap:7px}.full{grid-column:1/-1}label{font-weight:600;font-size:.95rem}input,select,textarea{font:inherit;padding:12px;border:1px solid #ccd5de;border-radius:9px;background:white;width:100%}input:focus,select:focus,textarea:focus{outline:2px solid #b6d4ed;border-color:#568ab5}textarea{min-height:105px;resize:vertical}.consent{display:flex;align-items:flex-start;gap:10px;font-weight:normal;line-height:1.5}.consent input{width:auto;margin-top:4px}button{grid-column:1/-1;background:var(--navy);color:white;border:0;border-radius:10px;padding:14px;font-size:1rem;font-weight:bold;cursor:pointer}button:hover{background:#234b70}.foot{text-align:center;color:#657482;font-size:.86rem;margin:18px 0 5px;line-height:1.5}
+@media(max-width:560px){form{grid-template-columns:1fr}.full{grid-column:auto}}
+</style>
+</head>
+<body>
+<header>
+<h1>சந்தல குல வம்சம்</h1>
+<p>Member Registration / உறுப்பினர் பதிவு</p>
+</header>
+<main>
+<section class="card">
+<p class="intro">Welcome! Please complete this form to register as a member.<br>வணக்கம்! உறுப்பினர் பதிவிற்காக கீழே உள்ள விவரங்களை நிரப்பவும்.</p>
+<div class="notice"><strong>Privacy:</strong> Your details are intended for authorized administrators only and will not be displayed publicly. This demo page is not yet connected to a database—submissions are not saved.</div>
+<form id="registrationForm">
+<div class="field full"><label for="name">Full Name / முழு பெயர் *</label><input id="name" name="name" required autocomplete="name" placeholder="Enter your full name"></div>
+<div class="field"><label for="mobile">Mobile Number / கைபேசி எண் *</label><input id="mobile" name="mobile" required inputmode="tel" pattern="[0-9+ -]{10,15}" autocomplete="tel" placeholder="10-digit mobile number"></div>
+<div class="field"><label for="email">Email / மின்னஞ்சல் *</label><input id="email" name="email" type="email" required autocomplete="email" placeholder="name@example.com"></div>
+<div class="field"><label for="district">District / மாவட்டம் *</label><input id="district" name="district" required placeholder="District"></div>
+<div class="field"><label for="town">Town or Village / ஊர் *</label><input id="town" name="town" required placeholder="Town / Village"></div>
+<div class="field"><label for="age">Age / வயது (optional)</label><input id="age" name="age" type="number" min="1" max="120" placeholder="Age"></div>
+<div class="field"><label for="occupation">Occupation / தொழில்</label><input id="occupation" name="occupation" placeholder="Occupation"></div>
+<div class="field"><label for="language">Preferred Language / மொழி</label><select id="language" name="language"><option value="Tamil">Tamil / தமிழ்</option><option value="English">English</option><option value="Both">Both / இரண்டும்</option></select></div>
+<div class="field full"><label for="info">Additional Information / கூடுதல் தகவல் (optional)</label><textarea id="info" name="info" placeholder="Any additional details"></textarea></div>
+<div class="field full"><label class="consent"><input type="checkbox" id="consent" required><span>I agree to submit my information for membership registration and understand that it will be reviewed by the administrators. / உறுப்பினர் பதிவிற்காக எனது தகவல்களை வழங்க ஒப்புக்கொள்கிறேன்.</span></label></div>
+<button type="submit">Submit Registration / பதிவு செய்க</button>
+</form>
+<div class="foot">Registration status will be Pending Review once a secure submission system is connected.<br>சந்தல குல வம்சம்</div>
+</section>
+</main>
+<script>
+document.getElementById('registrationForm').addEventListener('submit',function(e){e.preventDefault();alert('This is a demo form only. Your information has NOT been saved or sent. Please wait until the secure submission system is connected.');});
+</script>
+</body>
+</html>
